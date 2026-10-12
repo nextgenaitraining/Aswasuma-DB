@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>චාටර් කේක් - Premium & Creative Cake Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#E50914',
+                        brandRedDark: '#B80710',
+                        brandDark: '#0F0F0F',
+                        brandCard: '#181818',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0F0F0F; color: #FFFFFF; }
+        .glass-panel { background: rgba(24, 24, 24, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(229, 9, 20, 0.2); }
+        .red-glow { box-shadow: 0 0 25px rgba(229, 9, 20, 0.35); }
+        .text-glow { text-shadow: 0 0 10px rgba(229, 9, 20, 0.6); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0F0F0F; }
+        ::-webkit-scrollbar-thumb { background: #E50914; border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-red-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToSection('hero')">
+                    <div class="w-12 h-12 rounded-full bg-brandRed flex items-center justify-center text-2xl font-black shadow-lg red-glow">
+                        <i class="fa-solid fa-cake-candles text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-wider text-white">චාටර් <span class="text-brandRed text-glow">කේක්</span></span>
+                        <p class="text-xs text-gray-400">Deliciously Unforgettable</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#hero" class="hover:text-brandRed transition">මුල් පිටුව</a>
+                    <a href="#catalog" class="hover:text-brandRed transition">කේක් වර්ග & මිල ගණන්</a>
+                    <a href="#about" class="hover:text-brandRed transition">අප ගැන</a>
+                    <a href="#contact" class="hover:text-brandRed transition">ඇණවුම් කරන්න</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleCPanel()" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-brandRed border border-brandRed/40 rounded-xl text-xs font-bold transition flex items-center gap-2">
+                        <i class="fa-solid fa-sliders"></i> Admin cPanel
+                    </button>
+                    <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 bg-brandRed hover:bg-brandRedDark text-white font-bold rounded-xl shadow-lg transition red-glow text-sm">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#E50914_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-red-950/60 border border-brandRed/40 text-brandRed font-semibold text-xs uppercase tracking-widest">
+                        🔥 Creative Cake Studio in Sri Lanka
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+                        රසයේ වෙනසක් සමඟ <br>
+                        <span class="text-brandRed text-glow">චාටර් කේක්</span> වෙතින්!
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        ඕනෑම විශේෂ අවස්ථාවකට හරියන අද්විතීය, උසස්ම තත්ත්වයේ රසවත් කේක් වර්ග. ඔබේ සිහිනයට ගැලපෙන ලෙස Crafted Design එකෙන් අදම ඇණවුම් කරන්න!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#catalog" class="px-8 py-4 bg-brandRed hover:bg-brandRedDark text-white font-black text-lg rounded-2xl shadow-xl transition red-glow flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-utensils"></i> කේක් වර්ග බලන්න
+                        </a>
+                        <a href="#contact" class="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 font-bold text-lg rounded-2xl transition flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> Instant WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-brandRed/20 absolute blur-3xl -z-10"></div>
+                    <img id="heroImage" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Featured Charter Cake" class="rounded-3xl shadow-2xl border-2 border-brandRed/30 object-cover w-full max-w-md h-96 sm:h-[450px] transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="py-20 bg-zinc-950/80 border-t border-b border-red-950/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight">අපගේ <span class="text-brandRed text-glow">කේක් වර්ග</span> & මිල ගණන්</h2>
+                <p class="text-gray-400 text-sm sm:text-base">ඔබට අවශ්‍ය ඕනෑම Design එකක් සහ Size එකක් Custom-made කරගත හැක.</p>
+                <div id="filterContainer" class="flex flex-wrap justify-center gap-2 pt-4">
+                    <!-- Filters injected dynamically -->
+                </div>
+            </div>
+
+            <!-- Dynamic Cake Grid -->
+            <div id="cakeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cake Cards Injected Here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-brandRed font-bold uppercase tracking-wider text-sm">Professional Baker & Decorator</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+                        ඇයි ඔබ <span class="text-brandRed">"චාටර් කේක්"</span> තෝරාගත යුත්තේ?
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        අප ආයතනය වෘත්තීය මට්ටමින් පවත්වාගෙන යනු ලබන අතර, 100% ක්ම පිරිසිදු හා උසස් තත්ත්වයේ අමුද්‍රව්‍ය පමණක් භාවිතා කරයි. ඔබේ උපන්දිනය, මංගල උත්සවය හෝ ඕනෑම සංවත්සරයක් වෙනුවෙන් අලුත්ම Design එකෙන් කේක් එක සදාදීමට අපි සූදානම්.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="glass-panel p-4 rounded-xl border-l-4 border-brandRed">
+                            <h4 class="font-bold text-lg text-white">100% Fresh</h4>
+                            <p class="text-xs text-gray-400">Order එක දුන් පසු නැවුම් ලෙස සාදනු ලැබේ.</p>
+                        </div>
+                        <div class="glass-panel p-4 rounded-xl border-l-4 border-brandRed">
+                            <h4 class="font-bold text-lg text-white">Custom Design</h4>
+                            <p class="text-xs text-gray-400">ඔබ කැමති රූපයකටම කේක් එක නිර්මාණය කරයි.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=800&q=80" alt="Cake Decorating" class="rounded-2xl shadow-xl border border-red-900/30 w-full object-cover h-80 sm:h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-zinc-950 border-t border-red-900/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl red-glow border border-brandRed/40 text-center space-y-6">
+                <h2 class="text-3xl sm:text-4xl font-black">කේක් එකක් <span class="text-brandRed">Order කරන්න</span></h2>
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto">
+                    පහත Form එක මඟින් හෝ WhatsApp හරහා කෙලින්ම අප වෙත විස්තර යොමු කරන්න.
+                </p>
+                <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="space-y-4 text-left max-w-lg mx-auto pt-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">ඔබේ නම (Name)</label>
+                        <input type="text" id="custName" required placeholder="Ex: Nuwan Perera" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed transition">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-400 mb-1">දුරකථන අංකය (Phone)</label>
+                            <input type="tel" id="custPhone" required placeholder="07X XXXXXXX" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-400 mb-1">කේක් වර්ගය (Cake Type)</label>
+                            <select id="custCake" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed transition">
+                                <!-- Populated dynamically -->
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-400 mb-1">අවශ්‍ය දිනය සහ විශේෂ සටහන් (Date & Notes)</label>
+                        <textarea id="custNotes" rows="3" placeholder="කේක් එකේ සඳහන් විය යුතු නම, බර (Kg) හෝ වෙනත් උපදෙස්..." class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandRed transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-brandRed hover:bg-brandRedDark text-white font-black text-lg rounded-xl shadow-lg transition red-glow flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Send Order via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-zinc-900 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p class="font-semibold text-gray-400">චාටර් කේක් &copy; 2026 All Rights Reserved. Professional Cake Design Studio.</p>
+        </div>
+    </footer>
+
+    <div id="cPanelModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-4xl rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto border border-brandRed/50 relative shadow-2xl">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brandRed/20 text-brandRed border border-brandRed/40 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-cogs"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-white">චාටර් කේක් Admin cPanel</h3>
+                        <p class="text-xs text-gray-400">Manage products, prices, and images dynamically</p>
+                    </div>
+                </div>
+                <button onclick="toggleCPanel()" class="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 text-gray-300 flex items-center justify-center text-lg transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-6">
+                <!-- Add/Edit Form -->
+                <div class="lg:col-span-1 space-y-4 bg-zinc-900/90 p-5 rounded-2xl border border-zinc-800">
+                    <h4 id="formTitle" class="font-bold text-brandRed text-sm uppercase tracking-wide">නව කේක් එකක් එකතු කරන්න</h4>
+                    <form id="cakeForm" onsubmit="saveCake(event)" class="space-y-3 text-xs">
+                        <input type="hidden" id="cakeId">
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">නම (Name)</label>
+                            <input type="text" id="cakeName" required placeholder="Ex: Chocolate Fudge Cake" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-brandRed">
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">මිල LKR (Price)</label>
+                            <input type="number" id="cakePrice" required placeholder="Ex: 4500" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-brandRed">
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">වර්ගය (Category)</label>
+                            <select id="cakeCategory" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-brandRed">
+                                <option value="Birthday">Birthday Cakes</option>
+                                <option value="Wedding">Wedding Cakes</option>
+                                <option value="Cupcakes">Cupcakes</option>
+                                <option value="Special">Speciality Cakes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">ඡායාරූප Link (Image URL)</label>
+                            <input type="url" id="cakeImage" required placeholder="https://..." class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-brandRed">
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 font-bold mb-1">විස්තරය (Description)</label>
+                            <textarea id="cakeDesc" rows="2" placeholder="රසය සහ විශේෂතා..." class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-brandRed"></textarea>
+                        </div>
+                        <div class="pt-2 flex gap-2">
+                            <button type="submit" class="flex-1 py-2.5 bg-brandRed hover:bg-brandRedDark font-bold text-white rounded-lg transition shadow-md">
+                                Save Cake
+                            </button>
+                            <button type="button" onclick="resetForm()" class="px-3 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-gray-300 font-bold rounded-lg transition">
+                                Reset
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Cakes Table -->
+                <div class="lg:col-span-2 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-white text-sm">දැනට පවතින කේක් ලැයිස්තුව</h4>
+                        <span id="itemCount" class="text-xs px-2.5 py-1 bg-red-950 text-brandRed rounded-full font-bold border border-brandRed/30">0 Items</span>
+                    </div>
+                    <div class="overflow-x-auto rounded-xl border border-zinc-800 max-h-[380px] overflow-y-auto">
+                        <table class="w-full text-left text-xs text-gray-300">
+                            <thead class="bg-zinc-900 text-gray-400 uppercase font-bold sticky top-0">
+                                <tr>
+                                    <th class="p-3">Image</th>
+                                    <th class="p-3">Name</th>
+                                    <th class="p-3">Price (LKR)</th>
+                                    <th class="p-3 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminCakeTable" class="divide-y divide-zinc-800">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const defaultCakes = [
+            {
+                id: 1,
+                name: "Royal Chocolate Fudge Cake",
+                price: 5500,
+                category: "Birthday",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80",
+                desc: "Rich dark chocolate sponge layers topped with premium Swiss ganache."
+            },
+            {
+                id: 2,
+                name: "Red Velvet Romance Cake",
+                price: 6200,
+                category: "Special",
+                image: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80",
+                desc: "Classic velvety texture filled with authentic cream cheese frosting."
+            },
+            {
+                id: 3,
+                name: "Elegant Tiered Wedding Cake",
+                price: 18500,
+                category: "Wedding",
+                image: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=600&q=80",
+                desc: "Luxurious multi-layer butter cake decorated with hand-crafted sugar flowers."
+            },
+            {
+                id: 4,
+                name: "Gourmet Cupcake Box (6 Pcs)",
+                price: 2800,
+                category: "Cupcakes",
+                image: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=600&q=80",
+                desc: "Assorted flavors including Vanilla, Chocolate, and Strawberry swirl."
+            },
+            {
+                id: 5,
+                name: "Black Forest Gateau",
+                price: 4800,
+                category: "Birthday",
+                image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=600&q=80",
+                desc: "Traditional German cherry cake layered with fresh whipped cream."
+            }
+        ];
+
+        let cakes = [];
+        let currentFilter = 'All';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadCakes();
+            renderCatalog();
+            renderAdminTable();
+            populateOrderSelect();
+        });
+
+        function loadCakes() {
+            const saved = localStorage.getItem('charter_cakes');
+            if (saved) {
+                try {
+                    cakes = JSON.parse(saved);
+                } catch(e) {
+                    cakes = [...defaultCakes];
+                }
+            } else {
+                cakes = [...defaultCakes];
+                saveToStorage();
+            }
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('charter_cakes', JSON.stringify(cakes));
+        }
+
+        function renderFilters() {
+            const categories = ['All', 'Birthday', 'Wedding', 'Cupcakes', 'Special'];
+            const container = document.getElementById('filterContainer');
+            container.innerHTML = categories.map(cat => `
+                <button onclick="filterCakes('${cat}')" class="px-4 py-2 rounded-xl text-xs font-bold transition ${currentFilter === cat ? 'bg-brandRed text-white shadow-md red-glow' : 'bg-zinc-900 text-gray-400 hover:text-white border border-zinc-800'}">
+                    ${cat}
+                </button>
+            `).join('');
+        }
+
+        function filterCakes(category) {
+            currentFilter = category;
+            renderCatalog();
+        }
+
+        function renderCatalog() {
+            renderFilters();
+            const grid = document.getElementById('cakeGrid');
+            const filtered = currentFilter === 'All' ? cakes : cakes.filter(c => c.category === currentFilter);
+
+            if(filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">කේක් සොයාගත නොහැක.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(cake => `
+                <div class="glass-panel rounded-2xl overflow-hidden border border-zinc-800 hover:border-brandRed/50 transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative overflow-hidden h-60 bg-zinc-900">
+                            <img src="${cake.image}" alt="${cake.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/181818/E50914?text=Charter+Cake'">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-black/80 backdrop-blur-md text-brandRed font-bold text-xs rounded-full border border-brandRed/30">
+                                ${cake.category}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="font-bold text-lg text-white group-hover:text-brandRed transition">${cake.name}</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed line-clamp-2">${cake.desc}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between mt-4">
+                        <div>
+                            <span class="text-xs text-gray-400">මිල:</span>
+                            <div class="text-xl font-black text-brandRed">LKR ${Number(cake.price).toLocaleString()}</div>
+                        </div>
+                        <a href="#contact" onclick="selectCakeForOrder(${cake.id})" class="px-4 py-2 bg-brandRed hover:bg-brandRedDark text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-cart-shopping"></i> Order
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderAdminTable() {
+            const table = document.getElementById('adminCakeTable');
+            document.getElementById('itemCount').innerText = `${cakes.length} Items`;
+            
+            table.innerHTML = cakes.map(cake => `
+                <tr class="hover:bg-zinc-800/50 transition">
+                    <td class="p-3">
+                        <img src="${cake.image}" class="w-10 h-10 rounded-lg object-cover border border-zinc-700" onerror="this.src='https://placehold.co/100/181818/E50914?text=Cake'">
+                    </td>
+                    <td class="p-3 font-semibold text-white">${cake.name}</td>
+                    <td class="p-3 text-brandRed font-bold">LKR ${Number(cake.price).toLocaleString()}</td>
+                    <td class="p-3 text-right space-x-2">
+                        <button onclick="editCake(${cake.id})" class="p-1.5 bg-zinc-800 hover:bg-zinc-700 text-yellow-400 rounded-md transition">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button onclick="deleteCake(${cake.id})" class="p-1.5 bg-zinc-800 hover:bg-zinc-700 text-red-500 rounded-md transition">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function populateOrderSelect() {
+            const select = document.getElementById('custCake');
+            select.innerHTML = cakes.map(c => `<option value="${c.name}">${c.name} - LKR ${c.price}</option>`).join('');
+        }
+
+        function selectCakeForOrder(cakeId) {
+            const cake = cakes.find(c => c.id === cakeId);
+            if(cake) {
+                document.getElementById('custCake').value = cake.name;
+            }
+        }
+
+        function toggleCPanel() {
+            const modal = document.getElementById('cPanelModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function saveCake(e) {
+            e.preventDefault();
+            const id = document.getElementById('cakeId').value;
+            const name = document.getElementById('cakeName').value;
+            const price = parseFloat(document.getElementById('cakePrice').value);
+            const category = document.getElementById('cakeCategory').value;
+            const image = document.getElementById('cakeImage').value;
+            const desc = document.getElementById('cakeDesc').value;
+
+            if (id) {
+                const index = cakes.findIndex(c => c.id == id);
+                if (index !== -1) {
+                    cakes[index] = { id: Number(id), name, price, category, image, desc };
+                }
+            } else {
+                const newCake = {
+                    id: Date.now(),
+                    name,
+                    price,
+                    category,
+                    image,
+                    desc
+                };
+                cakes.push(newCake);
+            }
+
+            saveToStorage();
+            renderCatalog();
+            renderAdminTable();
+            populateOrderSelect();
+            resetForm();
+        }
+
+        function editCake(id) {
+            const cake = cakes.find(c => c.id === id);
+            if (cake) {
+                document.getElementById('cakeId').value = cake.id;
+                document.getElementById('cakeName').value = cake.name;
+                document.getElementById('cakePrice').value = cake.price;
+                document.getElementById('cakeCategory').value = cake.category;
+                document.getElementById('cakeImage').value = cake.image;
+                document.getElementById('cakeDesc').value = cake.desc;
+
+                document.getElementById('formTitle').innerText = "කේක් තොරතුරු වෙනස් කරන්න";
+            }
+        }
+
+        function deleteCake(id) {
+            if (confirm("ඔබට විශ්වාසද මෙම කේක් එක ඉවත් කිරීමට අවශ්‍ය බව?")) {
+                cakes = cakes.filter(c => c.id !== id);
+                saveToStorage();
+                renderCatalog();
+                renderAdminTable();
+                populateOrderSelect();
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('cakeForm').reset();
+            document.getElementById('cakeId').value = '';
+            document.getElementById('formTitle').innerText = "නව කේක් එකක් එකතු කරන්න";
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const cake = document.getElementById('custCake').value;
+            const notes = document.getElementById('custNotes').value;
+
+            const message = `Hello Charter Cake!%0A%0A*New Order Request*%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Cake:* ${encodeURIComponent(cake)}%0A- *Notes:* ${encodeURIComponent(notes)}`;
+            
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
